@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+<body class="h-100">
+
+<div class="background h-100 w-100">
+    <div class="container h-100">
+        <div class="row  align-items-center justify-content-center h-100">
+            <div class="col-12 py-5 mx-2 h-auto text-center  bgtext">
+                <h2 id="previewtext"> Sample</h2>
+
+                    <h6>Font size:<span class="label label-default"></span></h6>
+                    <button onclick="plus()" type="button" class="btn btn-default my-2 mx-2"> +</button>
+                    <button onclick="minus()" type="button" class="btn btn-default my-2 my-2"> -</button>
+
+
+                <h6>Title color:<span class="label label-default"></span></h6>
+                <button onclick="red()" type="button" class="btn btn-danger">RED</button>
+                <button onclick="blue()" type="button" class="btn btn-primary">BLUE</button>
+                <button onclick="green()" type="button" class="btn btn-success">GREEN</button>
+                <h6>Background color:<span class="label label-default"></span></h6>
+                <button onclick="bgred()" type="button" class="btn btn-danger">RED</button>
+                <button onclick="bgblue()" type="button" class="btn btn-primary">BLUE</button>
+                <button onclick="bggreen()" type="button" class="btn btn-success">GREEN</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+<script>
+
+    function red() {
+        document.getElementById("previewtext").style.color = "#ff0000";
+    }
+
+    function blue() {
+        document.getElementById("previewtext").style.color = "#3225d1";
+    }
+
+    function green() {
+        document.getElementById("previewtext").style.color = "#0e700a";
+    }
+
+    function bgred() {
+        document.getElementById("previewtext").style.backgroundColor = "#ff0000";
+    }
+
+    function bgblue() {
+        document.getElementById("previewtext").style.backgroundColor = "#3225d1";
+    }
+
+    function bggreen() {
+        document.getElementById("previewtext").style.backgroundColor = "#0e700a";
+    }
+
+    var previewText = document.getElementById("previewtext");
+    var defaultFontSize = 32;
+    previewText.setAttribute("data-size", "32");
+
+    function plus() {
+        var size = previewText.getAttribute("data-size");
+        console.log(size);
+        previewText.style.fontSize = (size++) + "px";
+        previewText.setAttribute("data-size", size);
+    }
+
+    function minus() {
+
+        var size = previewText.getAttribute("data-size");
+        console.log(size);
+        previewText.style.fontSize = (size--) + "px";
+        previewText.setAttribute("data-size", size);
+    }
+
+
+</script>
+</body>
+</html>
